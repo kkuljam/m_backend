@@ -90,6 +90,6 @@ public class Step2 {
             //5. soutv : 가장 가까운 변수의 값 출력
         System.out.println("job = " + job);
 
-    }//m end    fffyyy
+    }//m end    fffyyygg
     //main()밖에서 localValue 호출 할 수 없다.
 }
