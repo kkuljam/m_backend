@@ -14,24 +14,43 @@ public class Level1_8 {
 		String boardlist = "";
 		String footer = "================================\n";
 		String output = "";
-		int i= 0;
-		i++;
+		int i= 1;
 
 		/* 문제풀이 위치 */
-		String name = scanner.nextLine();
-		String visit = scanner.nextLine();
-		boardlist +=i+"\t "+name+"\t "+visit;
+		System.out.print("[1]작성자 : ");		String name = scanner.nextLine();
+		System.out.print("[1]방문록 : ");		String visit = scanner.nextLine();
+		boardlist +=(i++)+"\t "+name+"\t "+visit+"\n";
 		System.out.println(header);
 		System.out.println(boardlist);
 		System.out.println(footer);
 
-		String name1 = scanner.nextLine();
-		String visit1 = scanner.nextLine();
-		boardlist +=i+"\t "+name1+"\t "+visit1;
+		System.out.print("[2]작성자 : ");		name = scanner.nextLine();
+		System.out.print("[2]방문록 : ");		visit = scanner.nextLine();
+		boardlist +=(i++)+"\t "+name+"\t "+visit+"\n";
 		System.out.println(header);
 		System.out.println(boardlist);
 		System.out.println(footer);
 
+		System.out.print("[3]작성자 : ");		name = scanner.nextLine();
+		System.out.print("[3]방문록 : ");		visit = scanner.nextLine();
+		boardlist +=(i++)+"\t "+name+"\t "+visit+"\n";
+		System.out.println(header);
+		System.out.println(boardlist);
+		System.out.println(footer);
+
+		System.out.print("[4]작성자 : ");		name = scanner.nextLine();
+		System.out.print("[4]방문록 : ");		visit = scanner.nextLine();
+		boardlist +=(i++)+"\t "+name+"\t "+visit+"\n";
+		System.out.println(header);
+		System.out.println(boardlist);
+		System.out.println(footer);
+
+		System.out.print("[5]작성자 : ");		name = scanner.nextLine();
+		System.out.print("[5]방문록 : ");		visit = scanner.nextLine();
+		boardlist +=(i++)+"\t "+name+"\t "+visit+"\n";
+		System.out.println(header);
+		System.out.println(boardlist);
+		System.out.println(footer);
 		/* ----------- */
 	}
 }

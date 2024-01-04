@@ -12,15 +12,15 @@ public class Level1_7 {
 
 		/* 문제풀이 위치 */
 
-		String name = scanner.nextLine();
-		boolean bool = scanner.nextBoolean();
-		byte no= scanner.nextByte();
-		char sex = scanner.next().charAt(0);
-		short age = scanner.nextShort();
-		int point = scanner.nextInt();
-		long money = scanner.nextLong();
-		float cm= scanner.nextFloat();
-		double kg = scanner.nextDouble();
+		System.out.print("회원정보 : ");	String name = scanner.nextLine();
+		System.out.print("상태 : ");	boolean bool = scanner.nextBoolean();
+		System.out.print("회원번호 : ");	byte no= scanner.nextByte();
+		System.out.print("성별 : ");	char sex = scanner.next().charAt(0);
+		System.out.print("나이 : ");	short age = scanner.nextShort();
+		System.out.print("포인트 : ");	int point = scanner.nextInt();
+		System.out.print("예금액 : ");	long money = scanner.nextLong();
+		System.out.print("키 : ");	float cm= scanner.nextFloat();
+		System.out.print("몸무게 : ");	double kg = scanner.nextDouble();
 
 		
 		String output = "=======회원정보======\n" +
