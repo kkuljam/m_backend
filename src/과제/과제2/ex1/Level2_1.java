@@ -15,7 +15,11 @@ public class Level2_1 {
 			char btn = scanner.next().charAt(0);
 		
 		/* 문제풀이 위치 */
-	
+		if(btn=='x'){
+			System.out.println(">>음악종료");
+			break;
+		}
+
 		/* ----------- */
 
 		}

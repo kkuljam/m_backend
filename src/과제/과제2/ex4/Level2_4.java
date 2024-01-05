@@ -17,10 +17,31 @@ public class Level2_4 {
 		String player = scanner.next();
 		
 		/* 문제풀이 위치 */
-		int 가위=0;
-		int 바위=1;
-		int 보=2;
-		String comran="바위";
+
+		if(0==com){
+			System.out.println("comran) 가위");
+		} else if (1==com) {
+			System.out.println("comran) 바위");
+		}else {
+			System.out.println("comran) 보");
+		}
+
+		int pl= 0;
+		if(player.equals("가위")){
+			pl=0;
+		} else if (player.equals("바위")) {
+			pl=1;
+		} else if (player.equals("보")) {
+			pl=2;
+		}
+
+		if(pl==com){
+			System.out.println("result) 무승부");
+		} else if (pl==(com+1)%3) {
+			System.out.println("result) player 승리");
+		}else {
+			System.out.println("result) com 승리");
+		}
 		/* ----------- */
 	}
 }
