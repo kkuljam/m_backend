@@ -1,34 +1,41 @@
 package day04;
 
-import javax.swing.plaf.synth.SynthUI;
-import java.util.Scanner;
+// p. 139 확인문제7
 
-public class Step4 {// c r
-    public static void main(String[] args) {// m s
-        Scanner scanner= new Scanner(System.in);
-        int monry= 0;
+public class Step4 { // class s
+    public static void main(String[] args) { // main s
+
+        while(true){ // w s
+            System.out.println("-------------------------");
+            System.out.println("1.예금 2.출금 3.잔고 4.종료");
+            System.out.println("-------------------------");
+            System.out.println("선택> ");
+
+            //if( 1 ){ System.out.println("예금액> 10000 ");  }
+            // if( 2 ){ System.out.println("출금액> 2000 "); }
+            //if( 3 ){ System.out.println("잔고> 8000 "); }
+            //if( 4 ){ System.out.println("프로그램 종료"); }
+
+        } // w s
+
         /*
-
-
+            -같은 반복을 하다가 서로 다른 4가지의 경우의수 에 따른 if 제어하기.
          */
 
-    }//m e
-}//c e
- /*
-            은행 프로그램 구형
-                1. 반복정구로  [단* 종료 기능 선택시 종료]
-                2. 기능 : 야근 . 출금, 잔고, 종료
-                    예금: 더하기 작업
-                        금액에서 예금에서 입력받아 금액에 더한다
-                    출금:  빼기 작업
-                        금액에서 출금액을 입력받아 금엑에서 빼기한다.
-                    잔고 : 확인 작업
-                        급액의 값을 출력한다.
-                    종료: 프로그램을 긑내주는 작업
-                        무한루프 탈출한다. 1시위치 변수 2. brack 3. return
-                        -상황에 따라 선택
-                    [구현 순서 설정]
-                3. 데이터 설계
-                    금액 : 예금, 출근 했을때 누적으로 저장
+    } // main e
+} // class e
 
-         */
+/*
+
+    은행 프로그램 구현
+        [ 요구사항 설계 ]
+        1. 반복적으로 기능 사용 [ 단* 종료 기능 선택시 종료 ]
+        2. 기능 : 예금 , 출금 , 잔고 , 종료
+            예금 : 더하기 작업
+            출금 : 빼기 작업
+            잔고 : 확인 작업
+            종료 : 프로그램을 끝내는 작업
+        [ 구현 순서 ]
+            1. 프로토타입
+
+ */
