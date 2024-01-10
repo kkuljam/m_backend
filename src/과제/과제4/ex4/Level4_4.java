@@ -1,4 +1,4 @@
-package 과제.과제4.ex4;
+package src.과제.과제4.ex4;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -16,6 +16,25 @@ public class Level4_4 {
 
 		while ( true ) {
 			/* 문제풀이 위치 */
+			for (int i=0;i< X_AXIS.length;i++){
+				System.out.print(X_AXIS[i]+"\t");
+			}
+			System.out.println();
+			System.out.print("1.전진 2.후진 선택>");
+			int ch = scanner.nextInt();
+
+			if(ch==2){
+
+				x-= x>0? 1:0;
+				X_AXIS[ x ] = "★";
+				X_AXIS[ x+1 ] = null;
+			} else if (ch==1) {
+				x+= x<4? 1:0;
+				X_AXIS[ x ] = "★";
+				X_AXIS[ x-1 ] = null;
+			}else {
+				System.out.println("다시 입력해주세요");
+			}
 
 			/* ----------- */
 		}
