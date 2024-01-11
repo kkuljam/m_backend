@@ -19,12 +19,10 @@ public class Level4_4 {
 			for (int i=0;i< X_AXIS.length;i++){
 				System.out.print(X_AXIS[i]+"\t");
 			}
-			System.out.println();
-			System.out.print("1.전진 2.후진 선택>");
+			System.out.print("\n1.전진 2.후진 선택>");
 			int ch = scanner.nextInt();
 
 			if(ch==2){
-
 				x-= x>0? 1:0;
 				X_AXIS[ x ] = "★";
 				X_AXIS[ x+1 ] = null;
