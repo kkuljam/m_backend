@@ -1,4 +1,4 @@
-package src.과제.과제4.ex3;
+package 과제.과제4.ex3;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -13,22 +13,25 @@ public class Level4_3 {
 		int[] point = { 97 , 73 ,52 , 76 , 51 };
 
 		/* 문제풀이 위치 */
-		while (true){
-			for(int i=0;i< point.length;i++){
-				if(i!= point.length-1){
-					if(point[i]>point[i+1]){
-						int temp=0;
-						temp=point[i];
-						point[i]=point[i+1];
-						point[i+1]=temp;
-					}
-				}
-				System.out.print(point[i]+"\t");
-			}
-			int n =scanner.nextInt();
-
-
+		System.out.print("정렬 전: ");
+		for (int i=0; i< point.length;i++) {
+			System.out.print(point[i] + "\t");
 		}
+		for(int i=0;i< point.length-1;i++) {
+			for (int j = 0; j < point.length - 1 - i; j++) {
+					if (point[j] > point[j + 1]) {
+						int tmp = point[j];
+						point[j] = point[j + 1];
+						point[j + 1] = tmp;
+					}
+			}
+		}
+		System.out.print("\n정렬 후: ");
+		for (int i=0; i< point.length;i++) {
+			System.out.print(point[i] + "\t");
+		}
+
+
 		/*for(int i=0;i< point.length;i++){
 			if(point[i]>point[i+1]){
 				int temp=0;
