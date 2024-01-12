@@ -28,6 +28,7 @@ public class Level4_4 {
 				X_AXIS[ x+1 ] = null;
 			} else if (ch==1) {
 				x+= x<4? 1:0;
+				System.out.println(x);
 				X_AXIS[ x ] = "★";
 				X_AXIS[ x-1 ] = null;
 			}else {
