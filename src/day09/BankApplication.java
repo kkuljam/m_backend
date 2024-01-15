@@ -2,11 +2,14 @@ package day09;
 
 import java.util.Scanner;
 
-public class BankApplication {//c s
-
+public class BankApplication {//c s 실행클래스
+    //클래스멤버
+    //1. 필드
+    //생성자
+    //메소드
+        //1. 실행 시작점
     public static void main(String[] args) {//m s
         Account[] bankAccount = new Account[100];
-
         Scanner scanner=new Scanner(System.in);
 
         while (true){

@@ -1,4 +1,4 @@
-package 팀과제.미니팀과제1;
+package 팀과제.팀과제2;
 
 public class MemberInfo {
     int no;
