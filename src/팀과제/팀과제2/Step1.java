@@ -19,6 +19,14 @@ public class Step1 {
             int ch=scanner.nextInt();
             if (ch==1){// 회워가입
                 count++;
+                MemberInfo [] tem=new MemberInfo[1];
+                for(int i=0; i<memberInfo.length; i++){
+                    tem[i]=memberInfo[i];
+                }
+                memberInfo=new MemberInfo[count];
+                for(int i=0; i<tem.length; i++){
+                    memberInfo[i]=tem[i];
+                }
                 System.out.print("이름 : ");
                 String name = scanner.next();
                 System.out.print("전화번호 : ");
@@ -29,16 +37,19 @@ public class Step1 {
                 String id = scanner.next();
                 System.out.print("패스워드 : ");
                 String pw = scanner.next();
-                MemberInfo memberlist = new MemberInfo(count,name,id,pw,num,birth);
-                memberInfo=new MemberInfo[count];
-                sravices=new Sravice[count];
 
+                sravices=new Sravice[count];
+                MemberInfo memberlist = new MemberInfo(count,name,id,pw,num,birth);
                 for( int i = 0 ; i<memberInfo.length ; i++ ){
                     if(memberInfo[i]==null) {
                         memberInfo[i] = memberlist;
+                        System.out.println(memberInfo[0].id);
+                        System.out.println(memberInfo.length);
+
                         break;
                     }
                 }
+
             }//회원가입 끝
 
             if (ch == 2) {//로그인 시작
@@ -48,11 +59,13 @@ public class Step1 {
                 String pw = scanner.next();
 
                 for (int i = 0; i < memberInfo.length; i++) {
+
                     if (memberInfo[i] != null) {
                         if ( id.equals(memberInfo[i].id) && pw.equals(memberInfo[i].pw)) {
                             System.out.println("로그인 성공");
                             sin=memberInfo[i].no;
                             run=false;
+                            break;
                         }else {
                             System.out.println("정보가 틀렸습니다.");
                         }
@@ -82,19 +95,22 @@ public class Step1 {
                     System.out.println("구독 개월을 입력해주세요");
                     int month=scanner.nextInt();
                     Sravice subInfo=new Sravice(sin,베이직._class,베이직.tB,ch,month);
+                    int pri=베이직.price*month;
+                    System.out.println("총 요금은 : "+pri+"원 입니다.");
                     for( int i = 0 ; i<sravices.length ; i++ ){
                         if( sravices[i] == null ){
                             sravices[i] = subInfo;
                             break;
                         }
                     }
-
                 } else if (ch==2) {
                     System.out.println("구독 인원을 입력해주세요");
                     ch=scanner.nextInt();
                     System.out.println("구독 개월을 입력해주세요");
                     int month=scanner.nextInt();
                    Sravice subInfo=new Sravice(sin,스텐다드._class,스텐다드.tB,ch,month);
+                    int pri=스텐다드.price*month;
+                    System.out.println("총 요금은 : "+pri+"원 입니다.");
                     for( int i = 0 ; i<sravices.length ; i++ ){
                         if( sravices[i] == null ){
                             sravices[i] = subInfo;
@@ -107,7 +123,7 @@ public class Step1 {
                     System.out.println("구독 개월을 입력해주세요");
                     int month=scanner.nextInt();
                     Sravice subInfo=new Sravice(sin,프리미엄._class,프리미엄.tB,ch,month);
-                    int pri=베이직.price*month;
+                    int pri=프리미엄.price*month;
                     System.out.println("총 요금은 : "+pri+"원 입니다.");
                     for( int i = 0 ; i<sravices.length ; i++ ){
                         if( sravices[i] == null ){
@@ -119,12 +135,12 @@ public class Step1 {
             } else if (ch==2) {
                 for(int i=0; i< sravices.length;i++){
                     Sravice sub=sravices[i];
+                    if(sub.no==sin){
+                        System.out.println("등급 : "+sub._class+"\n용량 : "+sub.tB+"\n개월 : "+sub.month+"월\n사용인원 : "+sub.nOfP);
+                    }
                     if(sub==null){
                         System.out.println("구독하지 않았습니다.");
                         break;
-                    }
-                    if(sub.no==sin){
-                        System.out.println("등급 : "+sub._class+"\n용량 : "+sub.tB+"\n개월 : "+sub.month+"월\n사용인원 : "+sub.nOfP);
                     }
                 }
             } else if (ch==3) {
