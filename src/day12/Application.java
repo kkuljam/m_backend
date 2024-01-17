@@ -15,7 +15,7 @@ public class Application {
         //3. 해당 메소드가 정적 메소드일 경우
        // MainView.run();
 
-        //4. 싱긅톤
+        //4. 싱글톤
         MainView.getInstance().run();
     }
 }

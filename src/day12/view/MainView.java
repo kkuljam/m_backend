@@ -15,11 +15,6 @@ public class MainView {
     private static MainView mainView =new MainView();
     public static MainView getInstance(){return mainView;}
 
-
-
-
-
-
     //멤버
     //1. 필드
     Scanner scanner = new Scanner(System.in);
@@ -30,12 +25,20 @@ public class MainView {
     public void run(){
          while (true){
              System.out.println("===메인 페이지====");
-             System.out.println("1.회원가입 2.로그인");
+             System.out.println("1.회원가입 2.로그인 3.아이디 찾기 4.비밀번호 찾기");
              System.out.println("선택>");
              int ch = scanner.nextInt();
 
-             if(ch==1){}
-             else if(ch==2){}
+             if(ch==1){//회원가입 페이지 이동
+                MemberView.getInstance().signup();
+             }
+             else if(ch==2){
+                 MemberView.getInstance().login();
+             } else if (ch==3) {
+                 MemberView.getInstance().idFind();
+             } else if (ch==4) {
+                MemberView.getInstance().pwFind();
+             }
          }
     }
 }
