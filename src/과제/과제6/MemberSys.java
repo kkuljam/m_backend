@@ -47,8 +47,10 @@ public class MemberSys { // class s
 		String pw =scanner.next();
 
 		for(int i=0; i<members.length;i++){
-			if(members[i].getId().equals(id)&&members[i].getPw().equals(pw)){
-				return true;
+			if (members[i] != null) {
+				if (members[i].getId().equals(id) && members[i].getPw().equals(pw)) {
+					return true;
+				}
 			}
 		}
 		return false;
