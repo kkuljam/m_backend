@@ -6,7 +6,8 @@ public class Step1 {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         MemberInfo []memberInfo=new MemberInfo[0];
-        Sravice[] sravices=new Sravice[0];
+        Sravice[] sravices=new Sravice[100];
+
         int count=0;
         int sin=0;
         //students = new int[Integer.parseInt(count)]; 배열 용량 늘리기
@@ -19,14 +20,6 @@ public class Step1 {
             int ch=scanner.nextInt();
             if (ch==1){// 회워가입
                 count++;
-                MemberInfo [] tem=new MemberInfo[1];
-                for(int i=0; i<memberInfo.length; i++){
-                    tem[i]=memberInfo[i];
-                }
-                memberInfo=new MemberInfo[count];
-                for(int i=0; i<tem.length; i++){
-                    memberInfo[i]=tem[i];
-                }
                 System.out.print("이름 : ");
                 String name = scanner.next();
                 System.out.print("전화번호 : ");
@@ -57,9 +50,9 @@ public class Step1 {
                 String id = scanner.next();
                 System.out.print("패스워드 : ");
                 String pw = scanner.next();
-
+                System.out.println("로그인");
                 for (int i = 0; i < memberInfo.length; i++) {
-
+                    System.out.println("for문");
                     if (memberInfo[i] != null) {
                         if ( id.equals(memberInfo[i].id) && pw.equals(memberInfo[i].pw)) {
                             System.out.println("로그인 성공");
