@@ -1,12 +1,94 @@
 package 과제.과제6;
+import day12.view.MainView;
+
 import java.util.Scanner;
 
 public class MemberSys { // class s
-	Member[] members = new Member[100];
-	static void sign(){
+	static Member[] members = new Member[100];
+	//1. 회원가입 함수
+	static boolean sign(){
+		boolean result=true;
 		Scanner scanner=new Scanner(System.in);
+		System.out.print("아이디 :");
+		String id = scanner.next();
+		System.out.print("비밀번호 :");
+		String pw =scanner.next();
+		System.out.print("이름 :");
+		String name = scanner.next();
+		System.out.print("전화번호 :");
+		String phone =scanner.next();
+		System.out.print("나이 :");
+		String age = scanner.next();
 
+		for(int i=0; i<members.length;i++){//아이디 중복검사
+			if(members[i]!=null) {
+				if (members[i].getId().equals(id)) {
+					result= false;
+				}
+			}
+		}
+		Member member=new Member(id,pw,name,phone,age);
+		if(result) {//아이디 중복 통과하면 배열에 저장
+			for (int i = 0; i < members.length; i++) {
+				if (members[i] == null) {
+					members[i] = member;
+					break;
+				}
+			}
+		}
+		return result;
+	}//-----------------------------------
+	//2. 로그인 함수
+	public static boolean login(){
+		Scanner scanner=new Scanner(System.in);
+		System.out.print("아이디 :");
+		String id = scanner.next();
+		System.out.print("비밀번호 :");
+		String pw =scanner.next();
+
+		for(int i=0; i<members.length;i++){
+			if(members[i].getId().equals(id)&&members[i].getPw().equals(pw)){
+				return true;
+			}
+		}
+		return false;
+	}//----------------------------------
+	//3. 아이디 찾기
+	public static String idFind(){
+		Scanner scanner=new Scanner(System.in);
+		System.out.print("이름 :");
+		String name = scanner.next();
+		System.out.print("전화번호 :");
+		String phone =scanner.next();
+
+		for(int i=0; i<members.length;i++){
+			if (members[i] != null) {
+				if(members[i].getName().equals(name)&&members[i].getPhone().equals(phone)){
+					return members[i].getId();
+				}
+			}
+
+		}
+		return null;
+	}//----------------------------------
+	//4. 비번 찾기
+	public static String pwFind(){
+		Scanner scanner=new Scanner(System.in);
+		System.out.print("아이디 :");
+		String id = scanner.next();
+		System.out.print("전화번호 :");
+		String phone =scanner.next();
+
+		for(int i=0; i<members.length;i++){
+			if (members[i] != null) {
+				if (members[i].getId().equals(id) && members[i].getPhone().equals(phone)) {
+					return members[i].getPw();
+				}
+			}
+		}
+		return null;
 	}
+
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -15,21 +97,41 @@ public class MemberSys { // class s
 			System.out.println("\n\n--------- 회원 시스템 ---------");
 			System.out.print("1.회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기   선택> ");
 			int ch = sc.nextInt();
-
+			boolean result1;
+			String result2;
 			if( ch == 1 ) {
 
-				sign();
-				System.out.println("회원가입 성공");
-
+				result1=sign();
+				if(result1) {
+					System.out.println("회원가입 성공");
+				}else {
+					System.out.println("중복된 아이디입니다.");
+				}
 			}
 			else if( ch == 2 ) {
-
+				result1=login();
+				if(result1) {
+					System.out.println("로그인 성공");
+				}else {
+					System.out.println("로그인 실패");
+				}
 			}
 			else if( ch == 3 ) {
 
+				result2=idFind();
+				if(result2!=null) {
+					System.out.println("아이디 : "+result2);
+				}else {
+					System.out.println("정보를 찾을 수 없습니다.");
+				}
 			}
 			else if( ch == 4 ) {
-
+				result2=pwFind();
+				if(result2!=null) {
+					System.out.println("비밀번호 : "+result2);
+				}else {
+					System.out.println("정보를 찾을 수 없습니다.");
+				}
 			}
 
 		} // w e
