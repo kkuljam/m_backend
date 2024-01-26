@@ -14,7 +14,7 @@ public class BoardView {
     public void run(){
         while (true){
             System.out.println("========ezen 게시판============");
-            // 추후에 현재 게시물 출력 메소드가 들어갈 자리
+            BBoardView.getInstance().boardlist();
             System.out.println("1.글쓰기 2.글보기 3.로그아웃");
             System.out.print("선택>");
             int ch=scanner.nextInt();

@@ -11,7 +11,7 @@ public class BoardDto {
     private String bcontent;
     private String bdate;
     private int bview;
-    private String cname;
+
 
     public BoardDto(){};
 
@@ -32,10 +32,13 @@ public class BoardDto {
         this.bcontent = bcontent;
     }
 
-    //카테고리 생성자
-    public BoardDto(int cno, String cname) {
+    public BoardDto(int mno, int cno, int bno, String bcontent, String bdate, int bview) {
+        this.mno = mno;
         this.cno = cno;
-        this.cname = cname;
+        this.bno = bno;
+        this.bcontent = bcontent;
+        this.bdate = bdate;
+        this.bview = bview;
     }
 
     public int getMno() {
@@ -94,11 +97,4 @@ public class BoardDto {
         this.bview = bview;
     }
 
-    public String getCname() {
-        return cname;
-    }
-
-    public void setCname(String cname) {
-        this.cname = cname;
-    }
 }
