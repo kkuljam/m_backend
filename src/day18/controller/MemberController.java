@@ -30,7 +30,7 @@ public class MemberController {//c s
     }
 
     //-로그인 상태 필드 [boolean 했다/안했다, String 아이디/null, int 회원번호/0, memberDto 객체/null]
-    int loginMno=0;
+    public int loginMno=0;
 
     //2-1. 로그인
     public boolean login(MemberDto memberDto){

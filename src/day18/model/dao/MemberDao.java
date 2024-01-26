@@ -92,7 +92,7 @@ public class MemberDao extends Dao {
             ps= conn.prepareStatement(sql);
                 ps.setString(1,mid);
             //3.SQL 실행한다
-            ps.executeQuery();
+            rs=ps.executeQuery();
             //4.SQL 결과처리
             if(rs.next()){
                 //rs.next :다음 레코드 이동

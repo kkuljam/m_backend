@@ -20,7 +20,7 @@ public class BoardView {
             int ch=scanner.nextInt();
 
             if(ch==1){
-
+                BBoardView.getInstance().write();
             } else if (ch==2) {
 
             } else if (ch==3) {
